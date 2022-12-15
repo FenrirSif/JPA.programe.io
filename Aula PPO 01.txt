@@ -1,0 +1,78 @@
+Implementação de classe carro com chamadas em contrutor e atribuição de valor no atributo
+
+public class Principal {
+    public static void main(String[] args) {
+//Criando os atributos motorista na classe principal
+        Motorista m1 = new Motorista();
+        m1.setNome("João");
+        m1.setCpf("123456789");
+        m1.setIdade(49);
+        m1.setTelefone("85999664477");
+
+        Carro c = new Carro();
+        c.setCor("Branca");
+        c.setModelo("Amarok");
+        c.setCombustivel("Gasolina");
+        c.setValor(250.000);
+        c.setVelocidade(0);
+        c.setPosicaoMacha(1);
+        c.setMotorista(m1);
+
+        //Modelo 2 - Instanciando motorista no construtor da classe motorista
+        Carro c1 = new Carro();
+        c1.setCor("Verde");
+        c1.setModelo("Porshe");
+        c1.setCombustivel("Gasolina");
+        c1.setValor(250.000);
+        c1.setVelocidade(0);
+        c1.setPosicaoMacha(1);
+        c1.ligar();
+        //Instanciando motorista no construtor
+        c1.setMotorista(new Motorista("Leuda",63,"741852963","8599857745"));
+
+        //Modelo 3 - Instanciando motorista com getters and setters
+        Carro c2 = new Carro();
+        c2.setCor("Preto");
+        c2.setModelo("Civic");
+        c2.setCombustivel("Gasolina");
+        c2.setValor(250.000);
+        c2.setVelocidade(0);
+        c2.setPosicaoMacha(1);
+        //instanciando motorista para cada atributo
+        c2.setMotorista(new Motorista());
+        c2.getMotorista().setNome("Julio");
+        c2.getMotorista().setIdade(89);
+        c2.getMotorista().setCpf("852465987");
+        c2.getMotorista().setTelefone("Não possui");
+
+        while (c1.getVelocidade() < 180 ){
+            c1.acelerar(100);
+            c1.mudarMarcha();
+            Mensagem.msg(c1.toString());
+        }
+        //Mensagem.msg(c.toString()+c1.toString() + c2.toString());
+//        Motorista motorista = new Motorista();
+//        motorista.setNome("João");
+//        motorista.setCpf("123456789");
+//        motorista.setIdade(49);
+//        motorista.setTelefone("85999664477");
+//        Motorista m2 = new Motorista("João", 49, "123456789", "85999664477");
+//
+//        System.out.println(motorista.toString());
+//        System.out.println(m2.toString());
+//        if (motorista.equals(m2)) {
+//            System.out.println("Os objetos são iguais");
+//        } else {
+//            System.out.println("Os objetos são diferentes");
+//        }
+
+/* modelo wile
+        while (c1.getPosicaoMacha() >= 0 && c1.getPosicaoMacha() <6){
+            c1.acelerar(50);
+            c1.mudarMarcha();
+            System.out.println(c1.toString());
+        }
+        System.out.println("O carro" + c1.to);
+*/
+    }
+}
